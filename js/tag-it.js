@@ -1,11 +1,12 @@
 /*
 * jQuery UI Tag-it!
 *
-* @version v2.0 (06/2011)
+* @version v2.0.1 (06/2018)
 *
 * Copyright 2011, Levy Carneiro Jr.
 * Released under the MIT license.
 * http://aehlke.github.com/tag-it/LICENSE
+* Updated 2018 by 0Kills
 *
 * Homepage:
 *   http://aehlke.github.com/tag-it/
@@ -121,7 +122,8 @@
                 this.options.singleFieldNode = this.element;
                 this.element.addClass('tagit-hidden-field');
             } else {
-                this.tagList = this.element.find('ul, ol').andSelf().last();
+                //andSelf deprecated in jQuery > 3.0 using .addBack instead 
+                this.tagList = this.element.find('ul, ol').addBack().last();
             }
 
             this.tagInput = $('<input type="text" />').addClass('ui-widget-content');
